@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\IdentifyKey.cs" />
+    <Compile Include="Attributes\PrimaryKey.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="ModelHelper.cs" />
