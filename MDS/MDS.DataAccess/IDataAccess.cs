@@ -20,6 +20,8 @@ namespace MDS.DataAccess
 
         string getInsertSQL(Type type);
 
+        string getWhereByModel(Type type);
+
         IDataParameter[] getParameters(Model.Model model);
 
         bool Add(Model.Model model);
@@ -28,11 +30,23 @@ namespace MDS.DataAccess
 
         bool Delete(Model.Model model);
 
-        Model.Model GetModel(params object[] keys);
+        Model.Model GetModel(Type type, string where);
 
-        List<Model.Model> GetModelList(string where,string order,string top);
+        IEnumerable<Model.Model> GetModelList(Type type, string where, string order, int top);
 
-        PagedList<Model.Model> GetModelList(string where, string order, int page,int pagesize);
+        PagedList<Model.Model> GetModelList(Type type, string where, string order, int page, int pagesize);
+
+
+        int ExcuteSQL(string sql);
+
+        int ExcuteSQL(string sql, IDataParameter[] parameters);
+
+        object ExcuteSingle(string sql);
+
+        object ExcuteSingle(string sql, IDataParameter[] parameters);
+
+        DataTable Query(string sql);
+        DataTable Query(string sql, IDataParameter[] parameters);
 
     }
 }

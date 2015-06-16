@@ -13,7 +13,13 @@ namespace MDS.Model
 
         public int PageIndex { get; set; }
 
-        public int PageCount { get; set; }
+        public int PageCount
+        {
+            get
+            {
+                return RecordCount/PageSize +((RecordCount % PageSize) == 0 ? 0 : 1);
+            }
+        }
 
         public int PageSize { get; set; }
     }

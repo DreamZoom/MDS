@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.Model.Test", "MDS.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.DataAccess", "MDS.DataAccess\MDS.DataAccess.csproj", "{94C690AB-BBE7-45B8-BDB7-5BA03359152D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.Service", "MDS.Service\MDS.Service.csproj", "{92D8E43F-33FB-4095-AC9C-CA77639D336D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.Blog", "MDS.Blog\MDS.Blog.csproj", "{61DE190B-6926-4C0C-9A12-50D72732A381}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{94C690AB-BBE7-45B8-BDB7-5BA03359152D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C690AB-BBE7-45B8-BDB7-5BA03359152D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C690AB-BBE7-45B8-BDB7-5BA03359152D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D8E43F-33FB-4095-AC9C-CA77639D336D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D8E43F-33FB-4095-AC9C-CA77639D336D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D8E43F-33FB-4095-AC9C-CA77639D336D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D8E43F-33FB-4095-AC9C-CA77639D336D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DE190B-6926-4C0C-9A12-50D72732A381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DE190B-6926-4C0C-9A12-50D72732A381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DE190B-6926-4C0C-9A12-50D72732A381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DE190B-6926-4C0C-9A12-50D72732A381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

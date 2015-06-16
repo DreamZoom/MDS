@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Data;
 
 namespace MDS.Model
 {
@@ -80,6 +81,22 @@ namespace MDS.Model
         {
             var propertys = type.GetProperties().Where(m => m.GetCustomAttributes(attributeType, false).Length > 0);
             return propertys;
+        }
+
+        public static IEnumerable<Model> getByDataTable(Type type, DataTable datatable)
+        {
+            Model model = Activator.CreateInstance(type) as Model;
+            var propertys = model.GetType().GetProperties();
+            foreach (DataRow row in datatable.Rows)
+            {
+                var m = model.Clone() as Model;
+                foreach(var p in propertys){
+                    if (!datatable.Columns.Contains(p.Name)) continue;
+                    m.SetValue(p.Name, Convert.ChangeType(row[p.Name], p.PropertyType));
+                }
+                yield return m;
+            }
+
         }
     }
 }

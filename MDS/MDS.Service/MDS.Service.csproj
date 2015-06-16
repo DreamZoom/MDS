@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94C690AB-BBE7-45B8-BDB7-5BA03359152D}</ProjectGuid>
+    <ProjectGuid>{92D8E43F-33FB-4095-AC9C-CA77639D336D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MDS.DataAccess</RootNamespace>
-    <AssemblyName>MDS.DataAccess</AssemblyName>
+    <RootNamespace>MDS.Service</RootNamespace>
+    <AssemblyName>MDS.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,11 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDataAccess.cs" />
-    <Compile Include="MssqlDataAccess.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MDS.DataAccess\MDS.DataAccess.csproj">
+      <Project>{94c690ab-bbe7-45b8-bdb7-5ba03359152d}</Project>
+      <Name>MDS.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MDS.Model\MDS.Model.csproj">
       <Project>{ce697953-5ab0-4529-8cfa-5e5333facf21}</Project>
       <Name>MDS.Model</Name>

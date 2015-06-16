@@ -12,7 +12,7 @@ namespace MDS.Model
     /// <summary>
     /// 模型类
     /// </summary>
-    public class Model : IModel
+    public class Model : IModel,ICloneable
     {
      
         protected static Func<object, string, object> funcGetValue { get; set; }
@@ -51,6 +51,12 @@ namespace MDS.Model
         public virtual object GetValue(string propertyName)
         {
             return funcGetValue(this, propertyName);
+        }
+
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
 
     }

@@ -1,38 +1,46 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<asp:Content ID="aboutTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    About - My ASP.NET MVC Application
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    About
 </asp:Content>
 
-<asp:Content ID="aboutContent" ContentPlaceHolderID="MainContent" runat="server">
-    <hgroup class="title">
-        <h1>About.</h1>
-        <h2><%: ViewBag.Message %></h2>
-    </hgroup>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <article>
-        <p>
-            Use this area to provide additional information.
-        </p>
+    <div class="col-xs-6 col-lg-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <!--/.col-xs-6.col-lg-4-->
 
-        <p>
-            Use this area to provide additional information.
-        </p>
-
-        <p>
-            Use this area to provide additional information.
-        </p>
-    </article>
-
-    <aside>
-        <h3>Aside Title</h3>
-        <p>
-            Use this area to provide additional information.
-        </p>
-        <ul>
-            <li><%: Html.ActionLink("Home", "Index", "Home") %></li>
-            <li><%: Html.ActionLink("About", "About", "Home") %></li>
-            <li><%: Html.ActionLink("Contact", "Contact", "Home") %></li>
-        </ul>
-    </aside>
 </asp:Content>

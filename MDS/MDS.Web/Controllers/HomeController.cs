@@ -8,9 +8,12 @@ namespace MDS.Web.Controllers
 {
     public class HomeController : Controller
     {
+        MDS.Blog.ArticleService articleService = new Blog.ArticleService();
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+
+            ViewBag.Articles = articleService.GetModelList("ID >0","ID Desc");
 
             return View();
         }
@@ -22,11 +25,6 @@ namespace MDS.Web.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+      
     }
 }
