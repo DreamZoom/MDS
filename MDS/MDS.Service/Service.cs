@@ -47,7 +47,7 @@ namespace MDS.Service
             return DataAccess.GetModelList(ModelType, where,order,top);
         }
 
-        public PagedList<Model.Model> GetModelList(Type type, string where, string order, int page, int pagesize)
+        public PagedList<Model.Model> GetModelList(string where, string order, int page, int pagesize)
         {
             return DataAccess.GetModelList(ModelType, where, order, page, pagesize);
         }

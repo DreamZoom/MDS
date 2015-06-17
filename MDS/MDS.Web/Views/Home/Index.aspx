@@ -6,25 +6,11 @@
 
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style type="text/css">
-        .blog-post {
-            margin-bottom: 60px;
-        }
 
-        .blog-post-title {
-            margin-bottom: 5px;
-            font-size: 40px;
-        }
-
-        .blog-post-meta {
-            margin-bottom: 20px;
-            color: #999;
-        }
-    </style>
     <%foreach (var art in ViewBag.Articles)
       { %>
     <div class="blog-post">
-        <h2 class="blog-post-title"><%: art.Title%></h2>
+        <h3 class="blog-post-title"><%: art.Title%></h3>
         <p class="blog-post-meta"><%: art.PostTime%> <span></span><span>阅读(<%: art.Reads%>)</span></p>
         <div class="blog-post-body">
 

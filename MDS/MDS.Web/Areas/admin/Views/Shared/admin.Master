@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <link href="../../../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class=" info bg-info"></h2>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-12">
+               <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><%: Html.ActionLink("文章管理", "List", "Article") %></li>
+                    <li role="presentation"><%: Html.ActionLink("系统设置", "About", "Home") %></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

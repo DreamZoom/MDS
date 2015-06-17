@@ -1,0 +1,23 @@
+﻿body {
+}
+
+ul.nav {
+    padding-left: 20px;
+}
+
+.blog-post {
+    margin-bottom: 60px;
+}
+
+.blog-post-title {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.blog-post-meta {
+    margin-bottom: 20px;
+    color: #999;
+}
+.blog-post-body{
+    font-size: 16px;
+}

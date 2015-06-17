@@ -14,6 +14,7 @@ namespace MDS.Blog
     {
         [PrimaryKey]
         [IdentifyKey]
+        [ScaffoldColumn(false)]
         public int ID { get; set; }
 
         [Display(Name="标题")]
@@ -26,6 +27,7 @@ namespace MDS.Blog
         public DateTime PostTime { get; set;}
 
         [Display(Name = "阅读次数")]
+        
         public int Reads { get; set; }
     }
 }

@@ -148,7 +148,14 @@ namespace MDS.DataAccess
         public IEnumerable<Model.Model> GetModelList(Type type, string where, string order, int top)
         {
             string sql = getSelectSQL(type, top);
-            sql = string.Format("{0} Where {1} Order By {2}", sql, where, order);
+            if (!string.IsNullOrWhiteSpace(where))
+            {
+                sql = string.Format("{0} Where {1} ", sql, where);
+            }
+            if (!string.IsNullOrWhiteSpace(order))
+            {
+                sql = string.Format("{0} Order By {1}", sql, order);
+            }
             var dt = Query(sql);
             var list = ModelHelper.getByDataTable(type, dt);
             return list;
@@ -189,7 +196,20 @@ namespace MDS.DataAccess
         public PagedList<Model.Model> GetModelList(Type type, string where, string order, int page, int pagesize)
         {
             string sql = getSelectSQL(type);
-            sql = string.Format("{0} Where {1} Order By {2}", sql, where, order);
+
+            if (string.IsNullOrWhiteSpace(order))
+            {
+                order = getOrderString(type);
+            }
+
+            if (!string.IsNullOrWhiteSpace(where))
+            {
+                sql = string.Format("{0} Where {1} ", sql, where);
+            }
+            if (!string.IsNullOrWhiteSpace(order))
+            {
+                sql = string.Format("{0} Order By {1}", sql, order);
+            }
 
             string countsql = CreateCountingSql(sql);
             object count = ExcuteSingle(sql);
@@ -289,12 +309,20 @@ namespace MDS.DataAccess
             set { _connectionString = value; }
         }
 
+        private void CheckConnection(SqlConnection conn)
+        {
+            if (conn.State != ConnectionState.Open)
+            {
+                conn.Open();
+            }
+        }
         public int ExcuteSQL(string sql)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    CheckConnection(conn);
                     return cmd.ExecuteNonQuery();
                 }
             }
@@ -307,6 +335,7 @@ namespace MDS.DataAccess
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    CheckConnection(conn);
                     cmd.Parameters.AddRange(parameters);
                     return cmd.ExecuteNonQuery();
                 }
@@ -319,6 +348,7 @@ namespace MDS.DataAccess
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    CheckConnection(conn);
                     return cmd.ExecuteScalar();
                 }
             }
@@ -330,6 +360,7 @@ namespace MDS.DataAccess
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    CheckConnection(conn);
                     cmd.Parameters.AddRange(parameters);
                     return cmd.ExecuteScalar();
                 }
@@ -343,6 +374,7 @@ namespace MDS.DataAccess
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    CheckConnection(conn);
                     SqlDataAdapter command = new SqlDataAdapter(cmd);
                     command.Fill(ds, "ds");
                 }
@@ -357,6 +389,7 @@ namespace MDS.DataAccess
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    CheckConnection(conn);
                     cmd.Parameters.AddRange(parameters);
                     SqlDataAdapter command = new SqlDataAdapter(cmd);
                     command.Fill(ds, "ds");
