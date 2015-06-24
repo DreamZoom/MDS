@@ -20,7 +20,20 @@ namespace MDS.Model
         public Model()
         {
             InitDelegates();
-            
+            InitValues();
+        }
+
+
+        public void InitValues()
+        {
+            var defaluts=  ModelHelper.getDefaultPropertys(this.GetType());
+            foreach(var p in defaluts){
+                var def = p.GetCustomAttribute(typeof(Attributes.DefaultValue), true) as Attributes.DefaultValue;
+                if (def != null)
+                {
+                    this.SetValue(p.Name, def.Value);
+                }
+            }
         }
 
         /// <summary>

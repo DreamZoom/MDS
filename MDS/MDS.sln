@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.Service", "MDS.Service\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.Blog", "MDS.Blog\MDS.Blog.csproj", "{61DE190B-6926-4C0C-9A12-50D72732A381}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS.Web.HtmlHelper", "MDS.Web.HtmlHelper\MDS.Web.HtmlHelper.csproj", "{3A815BCF-640E-44C1-9ED1-2C3598F1DB6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{61DE190B-6926-4C0C-9A12-50D72732A381}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61DE190B-6926-4C0C-9A12-50D72732A381}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61DE190B-6926-4C0C-9A12-50D72732A381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A815BCF-640E-44C1-9ED1-2C3598F1DB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A815BCF-640E-44C1-9ED1-2C3598F1DB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A815BCF-640E-44C1-9ED1-2C3598F1DB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A815BCF-640E-44C1-9ED1-2C3598F1DB6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

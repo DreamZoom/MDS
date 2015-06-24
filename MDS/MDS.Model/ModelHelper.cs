@@ -77,6 +77,12 @@ namespace MDS.Model
             return primarys;
         }
 
+        public static IEnumerable<PropertyInfo> getDefaultPropertys(Type type)
+        {
+            var primarys = getPropertysByAttribute(type, typeof(Attributes.DefaultValue));
+            return primarys;
+        }
+
         public static IEnumerable<PropertyInfo> getPropertysByAttribute(Type type,Type attributeType)
         {
             var propertys = type.GetProperties().Where(m => m.GetCustomAttributes(attributeType, false).Length > 0);

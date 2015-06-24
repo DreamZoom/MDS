@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE697953-5AB0-4529-8CFA-5E5333FACF21}</ProjectGuid>
+    <ProjectGuid>{3A815BCF-640E-44C1-9ED1-2C3598F1DB6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MDS.Model</RootNamespace>
-    <AssemblyName>MDS.Model</AssemblyName>
+    <RootNamespace>MDS.Web.HtmlHelper</RootNamespace>
+    <AssemblyName>MDS.Web.HtmlHelper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,13 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\DefaultValue.cs" />
-    <Compile Include="Attributes\IdentifyKey.cs" />
-    <Compile Include="Attributes\PrimaryKey.cs" />
-    <Compile Include="IModel.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="ModelHelper.cs" />
-    <Compile Include="PagedList.cs" />
+    <Compile Include="AttributeHelper.cs" />
+    <Compile Include="Attributes\HiddenAny.cs" />
+    <Compile Include="Attributes\HiddenDisplay.cs" />
+    <Compile Include="Attributes\HiddenEdit.cs" />
+    <Compile Include="Attributes\RemoveAttribute.cs" />
+    <Compile Include="Attributes\StyleAttribute.cs" />
+    <Compile Include="ViewMode.cs" />
+    <Compile Include="HtmlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

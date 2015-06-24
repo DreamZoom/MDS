@@ -73,16 +73,18 @@ namespace MDS.Web.Areas.admin.Controllers
         [HttpPost]
         public ActionResult Delete(Blog.Article article)
         {
+            var art = articleService.GetModel("ID=" + article.ID);
+            if (art == null) return RedirectToAction("Error");
             try
             {
-                articleService.Delete(article);
+                articleService.Delete(art);
                 return RedirectToAction("List");
             }
             catch (Exception err)
             {
                 ModelState.AddModelError("", err.Message);
             }
-            return View(article);
+            return View(art);
         }
         
 

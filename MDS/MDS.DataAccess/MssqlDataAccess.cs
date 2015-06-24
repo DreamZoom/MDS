@@ -35,22 +35,24 @@ namespace MDS.DataAccess
         {
             var propertys = type.GetProperties();
             List<string> fileds = new List<string>();
+            var idkey = ModelHelper.getIdentifyKey(type).FirstOrDefault();
             foreach (var p in propertys)
             {
+                if (idkey.Name == p.Name) continue;
                 fileds.Add(string.Format("[{0}]=@{0}", p.Name));
             }
 
-            return string.Format(" UPDATE {1} SET [{0}]  ", string.Join(",", fileds.ToArray()), type.Name);
+            return string.Format(" UPDATE [{1}] SET {0}  ", string.Join(",", fileds.ToArray()), type.Name);
         }
 
         public string getUpdateFiledSQL(Type type, string filed)
         {
-            return string.Format(" UPDATE {1} SET [{0}]  ", string.Format("[{0}]=@{0}", filed), type.Name);
+            return string.Format(" UPDATE [{1}] SET {0}  ", string.Format("[{0}]=@{0}", filed), type.Name);
         }
 
         public string getDeleteSQL(Type type)
         {
-            return string.Format(" DELETE  FORM [{0}] ", type.Name);
+            return string.Format(" DELETE  FROM [{0}] ", type.Name);
         }
 
         public string getInsertSQL(Type type)
@@ -58,8 +60,10 @@ namespace MDS.DataAccess
             var propertys = type.GetProperties();
             List<string> fileds = new List<string>();
             List<string> values = new List<string>();
+            var idkey = ModelHelper.getIdentifyKey(type).FirstOrDefault();
             foreach (var p in propertys)
             {
+                if (idkey.Name == p.Name) continue;
                 fileds.Add(string.Format("[{0}]", p.Name));
                 values.Add(string.Format("@{0}", p.Name));
             }

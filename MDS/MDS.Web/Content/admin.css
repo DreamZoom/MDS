@@ -1,0 +1,20 @@
+﻿body {
+}
+
+.model-box{
+   
+    border:#eee solid 1px;
+}
+
+.edit-label,.edit-filed{
+    display:inline-block; 
+    padding:10px
+}
+
+.edit-label{
+    width:20%;
+    background-color:#eee;
+    text-align:right;
+    font-weight:200;
+    font-size:16px;
+}

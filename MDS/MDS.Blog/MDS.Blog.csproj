@@ -53,6 +53,10 @@
       <Project>{92d8e43f-33fb-4095-ac9c-ca77639d336d}</Project>
       <Name>MDS.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MDS.Web.HtmlHelper\MDS.Web.HtmlHelper.csproj">
+      <Project>{3a815bcf-640e-44c1-9ed1-2c3598f1db6d}</Project>
+      <Name>MDS.Web.HtmlHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

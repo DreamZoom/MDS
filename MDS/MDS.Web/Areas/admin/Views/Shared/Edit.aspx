@@ -14,7 +14,7 @@
 
     <fieldset>
         <legend>修改文章</legend>
-        <%: Html.EditorForModel() %>
+        <%: Html.EditModel() %>
         <p>
             <input type="submit" value="编辑" />
         </p>

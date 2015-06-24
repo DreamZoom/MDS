@@ -11,7 +11,7 @@
 <h3 class="alert alert-warning">您确定要删除这篇文章吗?</h3>
 <fieldset>
     <legend>删除文章</legend>
-    <%:Html.DisplayForModel() %>
+    <%:Html.DisplayModel() %>
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <%: Html.AntiForgeryToken() %>
